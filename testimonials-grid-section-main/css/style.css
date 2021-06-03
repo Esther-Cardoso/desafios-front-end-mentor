@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    --bg-body: hsl(210, 46%, 95%);
+    --bg-white: #FFF;
+    --bg-patrick: hsl(219, 29%, 14%);
+    --bg-jonathan: hsl(217, 19%, 35%);
+    --bg-daniel: hsl(263, 55%, 52%);
+    --cor-letra: hsl(0, 0%, 81%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-body);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+/* ESTRUTURA ------------------------- */
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira"
+    ;
+    max-width: 1200px;
+    gap: 30px;
+    margin: 100px auto;
+}
+
+@media (max-width: 1220px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+        "daniel daniel jonathan"
+        "jeanette patrick patrick"
+        "kira kira kira"
+        ;
+        margin: 80px 80px;
+    }
+}
+
+@media (max-width: 950px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "daniel daniel"
+        "jonathan jeanette"
+        "patrick patrick"
+        "kira kira"
+        ;
+        margin: 80px 80px;
+    }
+}
+
+@media (max-width: 680px) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "daniel"
+        "jonathan"
+        "jeanette"
+        "patrick"
+        "kira"
+        ;
+        margin: 80px 30px;
+    }
+}
+
+/* HEADER -------------------- */
+.header {
+    display: flex;
+}
+
+.header img {
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 40px;
+    margin-right: 20px;
+}
+
+.header .nome {
+    color: #FFF;
+}
+
+.header .nome span {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+}
+
+.header.preto .nome {
+    color: #000;
+}
+
+.header.preto .nome span {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+}
+
+/* CONTENT ----------------- */
+.card {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.card .destaque {
+    font-size: 22px;
+    line-height: 26px;
+    padding: 20px 0;
+    color: #FFF;
+}
+
+.destaque.preto {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.card .content {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.content.preto {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 500px) {
+    .card {
+        max-width: 375px;
+        margin: 0 auto;
+    }
+    .card .destaque {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .content {
+        font-size: 20px;
+        line-height: 24px;
+        padding: 0 10px 0 0;
+    }
+}
+
+/* COR DOS CARTOES ------------------ */
+
+.daniel {
+    grid-area: daniel;
+    background: var(--bg-daniel);
+}
+
+.jonathan {
+    grid-area: jonathan;
+    background: var(--bg-jonathan);
+}
+
+.kira {
+    grid-area: kira;
+    background: var(--bg-white);
+}
+
+.jeanette {
+    grid-area: jeanette;
+    background: var(--bg-white);
+}
+
+.patrick {
+    grid-area: patrick;
+    background: var(--bg-patrick);
+}
